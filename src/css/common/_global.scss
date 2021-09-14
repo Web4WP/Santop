@@ -1,4 +1,6 @@
 $Roboto: "Roboto", Arial, Helvetica, sans-serif;
+$Engravers: "Engravers MT", Arial, Helvetica, sans-serif;
+$Montserrat: "Montserrat", Arial, Helvetica, sans-serif;
 $fz-16: 16px;
 $white: #ffffff;
 $black: #000000;
@@ -16,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: $Montserrat;
   font-size: $fz-16;
   font-weight: 400;
   font-style: normal;
@@ -32,6 +34,7 @@ svg {
 }
 
 a {
+  display: inline-block;
   color: $black;
   text-decoration: none;
   &:hover,
@@ -78,10 +81,25 @@ main {
   margin: 0 auto;
 }
 
+.container-fluid {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: $Engravers;
+  font-size: 250px;
+  font-weight: 400;
+  color: #f2f2f2;
+  letter-spacing: 0.13em;
+  line-height: 1;
+}
+
 @media (min-width: 1000px) {
 
   .container {
-    max-width: 1170px;
+    max-width: 1439px;
   }
 
 }

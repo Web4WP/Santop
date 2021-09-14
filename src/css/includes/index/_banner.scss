@@ -1,0 +1,86 @@
+.banner {
+  margin-bottom: 104px;
+}
+
+.banner__photo {
+  position: relative;
+  height: 937px;
+  margin-bottom: 163px;
+}
+
+.banner__photo-img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner__img-scroll {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate 7s infinite linear;
+}
+
+.banner__wrap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  &::after {
+    content: url("../img/svg/santop-arrow.svg");
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.banner__logo {
+  width: 556px;
+  padding-top: 16px;
+}
+
+.banner__text {
+  width: 491px;
+  margin-bottom: 50px;
+  padding-right: 90px;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.banner__showroom {
+  display: block;
+  width: 127px;
+  height: 127px;
+  margin-top: 92px;
+  margin-left: 123px;
+  background: url("../img/svg/showroom.svg") center center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  &:hover {
+    background: url("../img/svg/showroom-hover.svg") center center no-repeat;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(380deg);
+  }
+
+}
+
+@media (max-width: 1439px) {
+
+  .banner__logo {
+    width: 500px;
+  }
+
+  .banner__text {
+    padding-right: 0;
+  }
+
+}
