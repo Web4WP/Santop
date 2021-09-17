@@ -1,0 +1,163 @@
+.map {
+  font-family: $Roboto;
+  color: $white;
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.map__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map__left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 20.7%;
+  padding: 73px 0 104px 34px;
+  background: #1b1b1b url("../img/content/map-bg.jpg") left top no-repeat;
+  background-size: cover;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.map__left-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.map__address {
+  margin-bottom: 32px;
+  padding-left: 22px;
+  padding-right: 110px;
+  line-height: 1.5;
+  background: url("../img/svg/map.svg") left 8px no-repeat;
+}
+
+.map__time {
+  margin-bottom: 39px;
+  padding-left: 25px;
+  background: url("../img/svg/time.svg") 5px 6px no-repeat;
+}
+
+.map__mail {
+  margin-bottom: 12px;
+  padding-left: 31px;
+  font-family: $Montserrat;
+  color: $white;
+  background: url("../img/svg/mail.svg") 9px 4px no-repeat;
+}
+
+.map__phone {
+  margin-bottom: 54px;
+  padding-left: 31px;
+  font-family: $Montserrat;
+  color: $white;
+  background: url("../img/svg/phone.svg") 8px 4px no-repeat;
+}
+
+.map__social {
+  margin-bottom: 64px;
+  padding-left: 13px;
+}
+
+.map__social-link {
+  margin-right: 24px;
+}
+
+.map__social-img {
+
+}
+
+.map__slider {
+  position: relative;
+  left: 14px;
+  width: 489px;
+  margin-bottom: 40px;
+}
+
+.map__slider-wrap {
+
+}
+
+.map__slider-img {
+
+}
+
+.map__nav {
+
+}
+
+.map__nav-btn {
+  width: 50px;
+  height: 50px;
+  top: auto;
+  bottom: -25px;
+  &::after {
+    display: none;
+  }
+  &_prev {
+    left: 44px;
+    background: url("../img/svg/map-arrow-left.svg") center center no-repeat;
+  }
+  &_next {
+    right: 44px;
+    background: url("../img/svg/map-arrow-right.svg") center center no-repeat;
+  }
+}
+
+.map__scrollbar {
+  width: 190px;
+  height: 1px;
+  margin: 0 auto;
+  background: #c4c4c4;
+  .swiper-scrollbar-drag {
+    background: #ffffff;
+  }
+}
+
+.map__right {
+  width: 77.5%;
+  filter: grayscale(1);
+}
+
+.map__call {
+  padding: 75px 0;
+  font-family: $Montserrat;
+  background: $black;
+  color: $white;
+  text-align: center;
+}
+
+.map__call-wrap {
+  padding-bottom: 103px;
+  border-bottom: 1px solid $white;
+}
+
+.map__call-text {
+  margin-bottom: 38px;
+}
+
+.map__call-btn {
+  width: 188px;
+  padding: 13px 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: $white;
+  text-align: center;
+  border-radius: 5px;
+}

@@ -4,7 +4,7 @@
 
 .banner__photo {
   position: relative;
-  height: 937px;
+  height: 937px; /*100vh*/
   margin-bottom: 163px;
 }
 
@@ -49,6 +49,19 @@
   line-height: 1.5;
 }
 
+.banner__scroll {
+  display: none;
+  max-width: 480px;
+}
+
+.banner__scroll-text {
+  margin-bottom: 20px;
+  font-size: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .banner__showroom {
   display: block;
   width: 127px;
@@ -56,10 +69,11 @@
   margin-top: 92px;
   margin-left: 123px;
   background: url("../img/svg/showroom.svg") center center no-repeat;
-  background-size: cover;
+  background-size: contain;
   transition: 0.3s;
   &:hover {
     background: url("../img/svg/showroom-hover.svg") center center no-repeat;
+    background-size: contain;
   }
 }
 

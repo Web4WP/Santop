@@ -1,3 +1,138 @@
 .footer {
   flex-shrink: 0;
+  padding-top: 19px;
+  color: $white;
+  background: $black;
+}
+
+.footer__wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 91px;
+}
+
+.footer__left {
+  width: 15%;
+}
+
+.footer__logo-link {
+  margin-bottom: 23px;
+}
+
+.footer__logo-img {
+
+}
+
+.footer__text {
+  font-family: $Roboto;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.footer__right {
+  display: flex;
+  justify-content: space-between;
+  width: 51%;
+}
+
+.footer__col {
+  width: 30%;
+  &_contact {
+    width: 68.2%;
+  }
+}
+
+.footer__follow {
+  margin-bottom: 10px;
+  font-family: $Montserrat;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  margin-right: 24px;
+}
+
+.footer__social-img {
+
+}
+
+.footer__list {
+  column-count: 2;
+}
+
+.footer__item {
+  margin-bottom: 12px;
+  padding-left: 22px;
+  &_mail {
+    font-family: $Montserrat;
+    background: url("../img/svg/mail.svg") left center no-repeat;
+  }
+  &_phone {
+    font-family: $Montserrat;
+    background: url("../img/svg/phone.svg") left center no-repeat;
+  }
+  &_address {
+    font-family: $Roboto;
+    background: url("../img/svg/map.svg") left 5px no-repeat;
+  }
+  &_time {
+    font-family: $Roboto;
+    background: url("../img/svg/time.svg") left center no-repeat;
+  }
+}
+
+.footer__link {
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}
+
+.footer__address {
+  font-style: normal;
+}
+
+.footer__copyright {
+  padding-bottom: 25px;
+  font-family: $Roboto;
+  font-size: 14px;
+}
+
+.footer__copyright-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copyright-politics {
+
+  a {
+    margin-right: 35px;
+    color: #7a7a7a;
+    text-decoration: underline;
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.footer__copyright-text {
+
+}
+
+.footer__copyright-dev {
+  a {
+    color: $white;
+  }
+  img {
+    margin-right: 5px;
+  }
 }

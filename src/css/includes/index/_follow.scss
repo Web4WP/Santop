@@ -1,0 +1,79 @@
+.follow {
+  position: relative;
+  margin-bottom: 115px;
+  text-align: center;
+}
+
+.follow__title {
+  margin-bottom: 40px;
+}
+
+.follow__img {
+  width: 333px;
+}
+
+.follow__text {
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.follow__me {
+  margin-bottom: 72px;
+}
+
+.follow__me-link {
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.follow__slider {
+  margin-bottom: 89px;
+}
+
+.follow__slider-wrap {
+
+}
+
+.follow__slider-item {
+
+}
+
+.follow__slider-item-link {
+
+}
+
+.follow__slider-item-img {
+
+}
+
+.follow__nav {
+  position: relative;
+}
+
+.follow__nav-btn {
+  width: 40px;
+  height: 40px;
+  top: auto;
+  bottom: -20px;
+  &::after {
+    display: none;
+  }
+  &_prev {
+    left: 558px;
+    background: url("../img/svg/slider-arrow-left.svg") center center no-repeat;
+  }
+  &_next {
+    right: 558px;
+    background: url("../img/svg/slider-arrow-right.svg") center center no-repeat;
+  }
+}
+
+.follow__nav-scrollbar {
+  width: 190px;
+  height: 1px;
+  margin: 0 auto;
+  .swiper-scrollbar-drag {
+    background: $black;
+  }
+}

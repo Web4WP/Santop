@@ -11,8 +11,14 @@
 @import "common/header";
 @import "common/footer";
 
+/* Reuse */
+@import "reuse/modal";
 
 /* Includes - Index */
 @import "includes/index/banner";
 @import "includes/index/expo";
 @import "includes/index/gallery";
+@import "includes/index/partner";
+@import "includes/index/cer";
+@import "includes/index/follow";
+@import "includes/index/map";

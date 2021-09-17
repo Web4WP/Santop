@@ -1,0 +1,16 @@
+div#exampleModal.write.modal.fade(tabindex="-1", aria-hidden="true")
+  div.write__dialog.modal-dialog
+    div.write__content.modal-content
+      button.write__close(type="button", data-bs-dismiss="modal")
+      div.write__wrap
+        img.write__logo(src="img/svg/logo.svg", alt="")
+        div.write__title Напишите нам по любым вопросам
+        form.write__form(method="post", action="/")
+          label.write__label
+            input.write__input(type="text", placeholder="Имя")
+          label.write__label
+            input.write__input(type="tel", placeholder="Телефон")
+          label.write__label
+            input.write__input(type="email", placeholder="E-mail:")
+          textarea.write__textarea(placeholder="Ваше сообщение")
+          input.write__submit(type="submit", value="Отправить сообщение")
