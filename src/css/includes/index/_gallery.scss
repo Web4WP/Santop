@@ -32,6 +32,9 @@
     .gallery__left-img {
       margin-bottom: 41px;
     }
+    .gallery__left-img.zap {
+      transform: translateX(-15px);
+    }
     .gallery__text {
       max-width: 431px;
       margin-left: auto;
@@ -68,6 +71,10 @@
   max-width: 480px;
   margin-left: 150px;
   line-height: 1.5;
+  &::after {
+    content: url("../img/svg/gallery-arrow.svg");
+    margin-left: 13px;
+  }
 }
 
 .gallery__right {
@@ -113,4 +120,111 @@
 .gallery__see-img {
   width: 230px;
   animation: rotate 7s infinite linear;
+}
+
+.gallery__slider {
+  display: none;
+}
+
+@media (max-width: 1279px) {
+
+  .gallery {
+    margin-bottom: 63px;
+  }
+
+  .gallery__slider {
+    display: block;
+    margin-bottom: 56px;
+    &_second {
+      margin-bottom: 81px;
+      .gallery__slider-wrap {
+        margin-bottom: 43px;
+      }
+      .gallery__slider-img {
+        width: 82%;
+        margin-bottom: 19px;
+      }
+    }
+  }
+
+  .gallery__left, .gallery__right {
+    display: none;
+  }
+
+  .gallery__title {
+    margin-bottom: 34px;
+    font-size: 50px;
+    letter-spacing: 0.13em;
+  }
+
+  .gallery__scrolldown {
+    top: -26px;
+    right: auto;
+    left: 139px;
+  }
+
+  .gallery .swiper-cube .swiper-cube-shadow:before {
+    display: none;
+  }
+
+  .gallery__slider-wrap {
+    margin-bottom: 41px;
+  }
+
+  .gallery__slider-img {
+    display: block;
+    max-height: 464px;
+    margin: 0 auto 14px;
+  }
+
+  .gallery__slider-text {
+    max-width: 100%;
+    margin-left: 0;
+    padding: 0 33px;
+    font-size: 12px;
+  }
+
+  .gallery__slider-nav {
+
+  }
+
+  .gallery__slider-btn {
+    width: 50px;
+    height: 50px;
+    top: auto;
+    bottom: -25px;
+    &::after {
+      display: none;
+    }
+    &_prev {
+      left: 40px;
+      background: url("../img/svg/slider-arrow-left.svg") center center no-repeat;
+    }
+    &_next {
+      right: 40px;
+      background: url("../img/svg/slider-arrow-right.svg") center center no-repeat;
+    }
+  }
+
+  .gallery__slider-scrollbar {
+    width: 150px;
+    height: 1px;
+    margin: 0 auto;
+    background: #c4c4c4;
+    .swiper-scrollbar-drag {
+      background: #000000;
+    }
+  }
+
+  .gallery__see-title {
+    margin-bottom: 54px;
+    line-height: 1.25;
+  }
+
+  .gallery__see-text {
+    margin-bottom: 23px;
+    padding: 0 20px;
+    line-height: 1.3;
+  }
+
 }

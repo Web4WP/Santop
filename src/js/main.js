@@ -2,6 +2,19 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  document.querySelector('.header__burger').addEventListener('click', function (el) {
+    el.currentTarget.classList.toggle('open');
+    document.querySelector('.header__phone-mob').classList.toggle('open');
+    document.querySelector('.header__menu').classList.toggle('open');
+    document.querySelector('main').classList.toggle('open');
+    document.querySelector('.footer').classList.toggle('open');
+  })
+
+  $('.header__logo').click(function () {
+    $("html, body").animate({ scrollTop: "0px"});
+  })
+
+
   const partner = new Swiper('.partner__carousel', {
     navigation: {
       nextEl: '.partner__carousel-btn_next',
@@ -12,8 +25,115 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
+  if($(window).width() < 1023) {
+
+    const galleryFirst = new Swiper('.gallery__slider', {
+      effect: "cube",
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      /*autoplay: {
+        delay: 5000,
+      },*/
+      navigation: {
+        nextEl: '.gallery__slider-btn_next',
+        prevEl: '.gallery__slider-btn_prev',
+      },
+      scrollbar: {
+        el: '.gallery__slider-scrollbar',
+      },
+    });
+
+  }
+
+  if($(window).width() > 1023) {
+
+    /*let controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 500}});
+
+    let tl = new TimelineMax();
+
+    tl.to($('.expo__right-img'), 0, { transform: 'scale(1)'}).from($('.expo__right-img'), 1, { transform: 'scale(0)' });
+
+    new ScrollMagic.Scene({
+      triggerElement: ".expo",
+      duration: "70%",
+      triggerHook: 0.7
+    })
+      .setTween(tl)
+      .addTo(controller);
+
+    let tl2 = new TimelineMax();
+
+    tl2.to($('.expo__left-img'), 0, { transform: 'scale(1)'}).from($('.expo__left-img'), 1, { transform: 'scale(0)' });
+
+    new ScrollMagic.Scene({
+      triggerElement: ".expo__meter",
+      duration: "70%",
+      triggerHook: 0.6
+    })
+      .setTween(tl2)
+      .addTo(controller);*/
+
+  }
+
+  let controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 500}});
+
+  let tl = new TimelineMax();
+
+  tl.to($('.expo__right-img'), 0, { transform: 'scale(1)'}).from($('.expo__right-img'), 1, { transform: 'scale(0)' });
+
+  new ScrollMagic.Scene({
+    triggerElement: ".expo",
+    duration: "70%",
+    triggerHook: 0.7
+  })
+    .setTween(tl)
+    .addTo(controller);
+
+  let tl2 = new TimelineMax();
+
+  tl2.to($('.expo__left-img'), 0, { transform: 'scale(1)'}).from($('.expo__left-img'), 1, { transform: 'scale(0)' });
+
+  new ScrollMagic.Scene({
+    triggerElement: ".expo__meter",
+    duration: "70%",
+    triggerHook: 0.6
+  })
+    .setTween(tl2)
+    .addTo(controller);
+
+  let tl3 = new TimelineMax();
+
+  tl3.to($('.expo__left'), 0, { transform: 'translateX(0px)'}).from($('.expo__left'), 1, { transform: 'translateX(100px)' });
+
+  new ScrollMagic.Scene({
+    triggerElement: "#expo",
+    duration: "70%",
+    triggerHook: 0.6
+  })
+    .setTween(tl3)
+    .addTo(controller);
+
+  let tl4 = new TimelineMax();
+
+  tl4.to($('.expo__title'), 0, { transform: 'scale(1)'}).from($('.expo__title'), 1, { transform: 'scale(0)' });
+
+  new ScrollMagic.Scene({
+    triggerElement: "#expo",
+    duration: "80%",
+    triggerHook: 1.25
+  })
+    .setTween(tl4)
+    .addTo(controller);
+
+
+
   const cer = new Swiper('.cer__slider', {
-    effect: "coverflow",
+    /*effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
     coverflowEffect: {
@@ -22,12 +142,23 @@ document.addEventListener('DOMContentLoaded', function () {
       depth: 100,
       modifier: 1,
       slideShadows: true,
-    },
+    },*/
     slidesPerView: "3",
     spaceBetween: 30,
     navigation: {
       nextEl: '.cer__nav-btn_next',
       prevEl: '.cer__nav-btn_prev',
+    },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      // when window width is >= 640px
+      768: {
+        slidesPerView: 3
+      }
     },
     scrollbar: {
       el: '.cer__nav-scrollbar',
@@ -42,6 +173,17 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     scrollbar: {
       el: '.follow__nav-scrollbar',
+    },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      // when window width is >= 640px
+      768: {
+        slidesPerView: 2
+      }
     },
   });
 
@@ -70,29 +212,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }, {
         searchControlProvider: 'yandex#search'
       }),
-
-      // Создаём макет содержимого.
       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
         '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
       ),
-
-
       myPlacemarkWithContent = new ymaps.Placemark([55.92213106880769,37.49972250000002], {
-
       }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
         iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
         iconImageHref: '../img/content/pin.png',
-        // Размеры метки.
         iconImageSize: [43, 61],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
         iconImageOffset: [-24, -24],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
         iconContentOffset: [15, 15],
-        // Макет содержимого.
         iconContentLayout: MyIconContentLayout
       });
 
@@ -100,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .add(myPlacemarkWithContent);
   });
 
-  /* Плавный скролл до якоря */
+
   $(function(){
     $("a[href^='#']").click(function() {
       let _href = $(this).attr("href");
@@ -108,6 +237,8 @@ document.addEventListener('DOMContentLoaded', function () {
       return false;
     });
   });
+
+
 
 
 

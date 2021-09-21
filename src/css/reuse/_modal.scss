@@ -100,3 +100,25 @@
     border-color: $black;
   }
 }
+
+@media (max-width: 1023px) {
+
+  .write__wrap {
+    width: auto;
+  }
+
+  .write__close {
+    width: 19px;
+    height: 19px;
+  }
+
+  .write__title {
+    margin-bottom: 36px;
+    font-size: 16px;
+  }
+
+  .write__label {
+    margin-bottom: 30px;
+  }
+
+}

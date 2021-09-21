@@ -19,9 +19,26 @@
   left: 50%;
   transform: translateX(-50%);
   animation: rotate 7s infinite linear;
+  &_mob {
+    display: none;
+  }
 }
 
 .banner__wrap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  &::after {
+    content: url("../img/svg/santop-arrow.svg");
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.banner__wrap-block {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -49,9 +66,17 @@
   line-height: 1.5;
 }
 
+.banner__text.hidden {
+  display: none;
+}
+
 .banner__scroll {
   display: none;
   max-width: 480px;
+}
+
+.banner__scroll.active {
+  display: block;
 }
 
 .banner__scroll-text {
@@ -78,14 +103,15 @@
 }
 
 @keyframes rotate {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
-    transform: rotate(380deg);
+  100% {
+    transform: rotate(360deg);
   }
 
 }
+
 
 @media (max-width: 1439px) {
 
@@ -94,6 +120,121 @@
   }
 
   .banner__text {
+    padding-right: 0;
+  }
+
+}
+
+
+@media (max-width: 1279px) {
+
+  .banner__photo {
+    height: 600px;
+    margin-bottom: 70px;
+  }
+
+  .banner__wrap {
+    &::after {
+      display: none;
+    }
+  }
+
+  .banner__logo {
+    width: 400px;
+  }
+
+  .banner__text {
+    font-size: 25px;
+  }
+
+  .banner__showroom {
+    margin-top: 50px;
+  }
+
+}
+
+@media (max-width: 1023px) {
+
+  .banner {
+    margin-bottom: 35px;
+  }
+
+  .banner__photo {
+    margin-bottom: 163px;
+    text-align: center;
+  }
+
+  .banner__photo-img {
+    margin-bottom: 38px;
+  }
+
+  .banner__img-scroll {
+    display: none;
+    &_mob {
+      position: static;
+      display: inline-block;
+      width: 98px;
+    }
+  }
+
+  .banner__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner__photo {
+    height: 500px;
+  }
+
+  .banner__logo {
+    width: 206px;
+    margin-bottom: 42px;
+    padding-top: 36px;
+  }
+
+  .banner__text {
+    width: auto;
+    margin-bottom: 44px;
+    padding-left: 16px;
+    padding-right: 15px;
+    font-size: 14px;
+  }
+
+  .banner__showroom {
+    margin: 66px auto 0;
+  }
+
+  .banner__scroll {
+    display: block;
+    max-width: 100%;
+    padding: 0 16px;
+    line-height: 1.5;
+  }
+
+  .banner__scroll-text {
+    font-size: 14px;
+    font-weight: 300;
+    .banner__showroom {
+      display: none;
+    }
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .banner__photo {
+    height: 261px;
+  }
+
+}
+
+@media (max-width: 374px) {
+
+  .banner__text,
+  .banner__scroll {
+    padding-left: 0;
     padding-right: 0;
   }
 

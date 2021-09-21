@@ -161,3 +161,96 @@
   text-align: center;
   border-radius: 5px;
 }
+
+@media (max-width: 1279px) {
+
+  .map__wrap {
+    flex-direction: column;
+  }
+
+  .map__left {
+    width: auto;
+    padding: 73px 0 52px 34px;
+  }
+
+  .map__right {
+    width: auto;
+  }
+
+  .map__address {
+    padding-left: 30px;
+    padding-right: 69px;
+    background-position: 8px 8px;
+  }
+
+  .map__time {
+    padding-left: 34px;
+    background-position: 13px 6px;
+  }
+
+  .map__mail {
+    padding-left: 39px;
+    background-position: 17px 4px;
+  }
+
+  .map__phone {
+    padding-left: 39px;
+    background-position: 16px 4px;
+  }
+
+  .map__social {
+    margin-bottom: 36px;
+    padding-left: 22px;
+  }
+
+  .map__slider {
+    width: auto;
+    left: 0;
+    margin-bottom: 31px;
+    padding-right: 35px;
+  }
+
+  .map__nav-btn_prev {
+    left: 0;
+  }
+
+  .map__nav-btn_next {
+    right: 33px;
+  }
+
+  .map__scrollbar {
+    width: 173px;
+    left: -15px;
+  }
+
+  .map__right {
+    height: 372px;
+  }
+
+  .map__call {
+    padding: 50px 0;
+  }
+
+  .map__call-wrap {
+    padding-bottom: 19px;
+    border-bottom: 0;
+  }
+
+  .map__call-text {
+    margin-bottom: 21px;
+  }
+
+
+}
+
+@media (max-width: 1023px) {
+
+
+
+}
+
+@media (max-width: 767px) {
+
+
+
+}
