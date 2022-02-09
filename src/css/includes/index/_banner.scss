@@ -1,10 +1,6 @@
-.banner {
-  margin-bottom: 104px;
-}
-
 .banner__photo {
   position: relative;
-  height: 937px; /*100vh*/
+  height: 100vh;
   margin-bottom: 163px;
 }
 
@@ -13,10 +9,16 @@
   height: 100%;
 }
 
+.banner__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .banner__img-scroll {
   position: absolute;
   bottom: 55px;
-  left: 50%;
+  left: 48.2%;
   transform: translateX(-50%);
   animation: rotate 7s infinite linear;
   &_mob {
@@ -61,22 +63,9 @@
   width: 491px;
   margin-bottom: 50px;
   padding-right: 90px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 300;
   line-height: 1.5;
-}
-
-.banner__text.hidden {
-  display: none;
-}
-
-.banner__scroll {
-  display: none;
-  max-width: 480px;
-}
-
-.banner__scroll.active {
-  display: block;
 }
 
 .banner__scroll-text {
@@ -93,23 +82,23 @@
   height: 127px;
   margin-top: 92px;
   margin-left: 123px;
-  background: url("../img/svg/showroom.svg") center center no-repeat;
-  background-size: contain;
+  background-size: cover;
   transition: 0.3s;
+  animation: rotate 7s infinite linear;
   &:hover {
+    .banner__showroom-img {
+      display: none;
+    }
+    transition: 0.4s;
+    animation: none;
     background: url("../img/svg/showroom-hover.svg") center center no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 
+.banner__showroom-hover {
+  display: none;
 }
 
 
@@ -129,14 +118,8 @@
 @media (max-width: 1279px) {
 
   .banner__photo {
-    height: 600px;
+    height: 100vh;
     margin-bottom: 70px;
-  }
-
-  .banner__wrap {
-    &::after {
-      display: none;
-    }
   }
 
   .banner__logo {
@@ -144,13 +127,33 @@
   }
 
   .banner__text {
-    font-size: 25px;
+    font-size: 21px;
   }
 
   .banner__showroom {
     margin-top: 50px;
+
   }
 
+}
+
+@media (max-width: 1200px) {
+
+  .banner__wrap {
+    &::after {
+      left: 490px;
+      transform: none;
+    }
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .banner__wrap {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 1023px) {
@@ -164,7 +167,7 @@
     text-align: center;
   }
 
-  .banner__photo-img {
+  .banner__video {
     margin-bottom: 38px;
   }
 
@@ -174,6 +177,7 @@
       position: static;
       display: inline-block;
       width: 98px;
+      opacity: 0.5;
     }
   }
 
@@ -181,6 +185,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    &::after {
+      display: none;
+    }
   }
 
   .banner__photo {
@@ -205,21 +212,6 @@
     margin: 66px auto 0;
   }
 
-  .banner__scroll {
-    display: block;
-    max-width: 100%;
-    padding: 0 16px;
-    line-height: 1.5;
-  }
-
-  .banner__scroll-text {
-    font-size: 14px;
-    font-weight: 300;
-    .banner__showroom {
-      display: none;
-    }
-  }
-
 }
 
 @media (max-width: 767px) {
@@ -232,10 +224,18 @@
 
 @media (max-width: 374px) {
 
-  .banner__text,
-  .banner__scroll {
+  .banner__text {
     padding-left: 0;
     padding-right: 0;
   }
 
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

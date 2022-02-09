@@ -4,7 +4,7 @@ section#gallery.gallery
     img.gallery__scrolldown(src="img/svg/scroll-down-dark.svg", alt="")
   div.gallery__wrap
     div.gallery__left
-      div.gallery__left-item
+      div.gallery__left-item.gallery__left-item_1
         img.gallery__left-img(src="img/content/gallery-1.jpg", alt="")
         div.container
           p.gallery__text Создание особой атмосферы ванной комнаты — отдельный вид искусства. Осознанность и внимание к каждой детали. Santop-Expo покажет всю картину целиком
@@ -15,21 +15,22 @@ section#gallery.gallery
       div.gallery__left-item.gallery__left-item_3
         img.gallery__left-img(src="img/content/gallery-5.jpg", alt="")
         div.container
-          p.gallery__text Создание особой атмосферы ванной комнаты — отдельный вид искусства. Осознанность и внимание к каждой детали. Santop-Expo покажет всю картину целиком
+          p.gallery__text Свобода выбора и вдохновение - это именно то, что вам нужно при создании ванной комнаты у нас в гостях.
       div.gallery__left-item.gallery__left-item_4
-        img.gallery__left-img.gallery__left-img_left(src="img/content/gallery-6.jpg", alt="")
+        img.gallery__left-img(src="img/content/gallery-6.jpg", alt="")
         div.container
           p.gallery__text Сквозь время стиль обрел собственное звучание и встроился в современные интерьеры
     div.gallery__right
-      div.gallery__right-item
+      div.gallery__right-item.gallery__right-item_1
         img.gallery__right-img(src="img/content/gallery-2.jpg", alt="")
-        p.gallery__right-text Создание особой атмосферы — особый вид искусства. Осознанность и внимание к каждой детали. Showroom SANTOP покажет всю картину целиком
-      div.gallery__right-item
+      div.gallery__right-item.gallery__right-item_2
         img.gallery__right-img(src="img/content/gallery-4.jpg", alt="")
-        p.gallery__right-text Создание особой атмосферы — особый вид искусства. Осознанность и внимание к каждой детали. Showroom SANTOP покажет всю картину целиком
-      div.gallery__right-item
+      div.gallery__right-item.gallery__right-item_3
         img.gallery__right-img(src="img/content/gallery-7.jpg", alt="")
-        p.gallery__right-text Создание особой атмосферы — особый вид искусства. Осознанность и внимание к каждой детали. Showroom SANTOP покажет всю картину целиком
+      div.gallery__right-item.gallery__right-item_4
+        img.gallery__right-img(src="img/content/gallery-8.jpg", alt="")
+      div.gallery__right-item.gallery__right-item_5
+        img.gallery__right-img(src="img/content/gallery-9.jpg", alt="")
   div.gallery__slider.swiper
     div.gallery__slider-wrap.swiper-wrapper
       div.gallery__slider-item.swiper-slide
@@ -63,4 +64,5 @@ section#gallery.gallery
   div.gallery__see
     div.gallery__see-title Лучше один раз увидеть
     p.gallery__see-text в нашем шоуруме более 5000 выставочных образцов от премиум моделей до стильных эконом вариантов.
-    img.gallery__see-img(src="../img/svg/showroom.svg", alt="")
+    button(data-bs-toggle="modal" data-bs-target="#exampleModal")
+      img.gallery__see-img(src="../img/svg/showroom.svg", alt="")

@@ -2,26 +2,17 @@ section#maps.map
   div.map__wrap
     div.map__left
       div.map__left-wrap
-        div.map__address Долгопрудный, Лихачевский проезд, 10аС1 и 10аС2,
+        a.map__address(href="https://yandex.by/MAPS/213/moscow/?ll=37.824822%2C55.721051&mode=routes&rtext=&rtt=auto&z=10.55", target="_blank") Долгопрудный, Лихачевский проезд, 10аС1
         div.map__time 10:00 — 22:00 без выходных
         a.map__mail(href="mailto:info@santop-expo.ru") info@santop-expo.ru
-        a.map__phone(href="tel:88006000100") 8 800 6000 100
+        a.map__phone(href="tel:+74951747044") 8 (495) 174 70 44
         div.map__social
           a.map__social-link(href="#")
             img.map__social-img(src="img/svg/facebook.svg", alt="")
           a.map__social-link(href="#")
             img.map__social-img(src="img/svg/instagram.svg", alt="")
-        div.map__slider.swiper
-          div.map__slider-wrap.swiper-wrapper
-            img.map__slider-img.swiper-slide(src="img/content/map-img.jpg", alt="")
-            img.map__slider-img.swiper-slide(src="img/content/map-img.jpg", alt="")
-        div.map__nav
-          button.map__nav-btn.map__nav-btn_prev.swiper-button-prev
-          button.map__nav-btn.map__nav-btn_next.swiper-button-next
-          div.map__scrollbar.swiper-scrollbar
+        div.map__slider
+          img.map__slider-img(src="img/content/map-img.jpg", alt="")
+        div.map__call-block
+          button.map__call-btn(data-bs-toggle="modal" data-bs-target="#exampleModal") Запланировать визит
     div#map.map__right
-  div.map__call
-    div.container
-      div.map__call-wrap
-        div.map__call-text Отвечаем на все вопросы сразу
-        button.map__call-btn(data-bs-toggle="modal" data-bs-target="#exampleModal") Напишите нам

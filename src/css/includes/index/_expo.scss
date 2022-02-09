@@ -1,13 +1,13 @@
 .expo {
   position: relative;
-  margin-bottom: 670px;
+  margin-bottom: 500px;
   padding-top: 160px;
 }
 
 .expo__title {
   position: absolute;
-  top: 49px;
-  right: 0;
+  top: -50px;
+  left: 0;
   z-index: -1;
 }
 
@@ -68,7 +68,7 @@
 .expo__left-img {
   position: absolute;
   bottom: -285px;
-  left: 215px;
+  left: 0;
   width: 743px;
 }
 
@@ -107,8 +107,26 @@
 
 }
 
+@media (max-width: 1365px) {
+
+  .expo__scrolldown {
+    right: 415px;
+  }
+
+}
 
 @media (max-width: 1279px) {
+  .expo__left {
+    padding-left: 180px;
+  }
+
+  .expo__text {
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 1023px) {
 
   .expo {
     margin-bottom: 55px;
@@ -131,7 +149,7 @@
 
   .expo__left {
     width: auto;
-    padding-top: 22px;
+    padding-top: 31px;
     padding-left: 0;
   }
 
@@ -189,16 +207,6 @@
     padding-left: 33px;
   }
 
-  .expo__right-img {
-    &_mob {
-
-    }
-  }
-
-}
-
-@media (max-width: 1023px) {
-
   .expo__right {
     display: block;
   }
@@ -207,12 +215,22 @@
     top: 211px;
   }
 
+  .expo__right-img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+
 }
 
 @media (max-width: 767px) {
 
   .expo__scrolldown {
     top: 252px;
+  }
+
+  .expo__right-img {
+    width: 100%;
   }
 
 }
@@ -225,6 +243,12 @@
 
   .expo__scrolldown {
     top: 286px;
+  }
+
+  .expo__meter,
+  .expo__samples,
+  .expo__samples span {
+    font-size: 35px;
   }
 
   .expo__meter,

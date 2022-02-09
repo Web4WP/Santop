@@ -6,6 +6,7 @@ const imgMin = require('../gulp/image');
 const svgSprite = require('../gulp/svg');
 const copyFonts = require('../gulp/copyFonts');
 const copyCSS = require('../gulp/copyCssLib');
+const copyVideo = require('../gulp/copyVideo');
 const copyJS = require('../gulp/copyJsLib');
 
 
@@ -25,6 +26,7 @@ module.exports = function serve(cb) {
   gulp.watch('src/pug/**/*.pug', gulp.series(pug2Html))
   gulp.watch('src/css/**/*.scss', gulp.series(scss2Css))
   gulp.watch('src/css/lib/**/.css', gulp.series(copyCSS, readyReload))
+  gulp.watch('src/video/**', gulp.series(copyVideo, readyReload))
   gulp.watch('src/js/**/*.js', gulp.series(copyJS, readyReload))
   gulp.watch('src/js/lib/**', gulp.series(copyJS, readyReload))
   gulp.watch('src/fonts', gulp.series(copyFonts, readyReload))

@@ -1,16 +1,17 @@
-div#exampleModal.write.modal.fade(tabindex="-1", aria-hidden="true")
-  div.write__dialog.modal-dialog
+div#exampleModal.write.modal.fade.modal-window(tabindex="-1", aria-hidden="true" role="dialog")
+  div.write__dialog.modal-dialog.modal-dialog-centered
     div.write__content.modal-content
       button.write__close(type="button", data-bs-dismiss="modal")
       div.write__wrap
         img.write__logo(src="img/svg/logo.svg", alt="")
-        div.write__title Напишите нам по любым вопросам
+        div.write__title Въезд на территорию через контрольно-пропускной пункт.
+        div.write__text  Оставьте свои данные, мы подскажем, как добраться и ответим на все  вопросы.
         form.write__form(method="post", action="/")
           label.write__label
             input.write__input(type="text", placeholder="Имя")
           label.write__label
             input.write__input(type="tel", placeholder="Телефон")
-          label.write__label
+          //-label.write__label
             input.write__input(type="email", placeholder="E-mail:")
-          textarea.write__textarea(placeholder="Ваше сообщение")
-          input.write__submit(type="submit", value="Отправить сообщение")
+          //-textarea.write__textarea(placeholder="Ваше сообщение")
+          input.write__submit(type="submit", value="Запланировать визит")

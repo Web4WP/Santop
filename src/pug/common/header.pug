@@ -1,22 +1,22 @@
 header.header
   div.container
     div.header__top
-      a.header__mail(href="mailto:info@santop-expo.ru") info@santop-expo.ru
-      a.header__phone-mob(href="tel:84951747044")
+      a.header__mail(href="mailto:info@santop-expo.ru", aria-label="E-mail") info@santop-expo.ru
+      a.header__phone-mob(href="tel:84951747044", aria-label="Телефон")
       a.header__logo(href="#")
         img.header__logo-img(src="img/svg/logo.svg", alt="Santop")
-      a.header__phone(href="tel:84951747044") 8 (495) 174 70 44
+      a.header__phone(href="tel:84951747044", aria-label="Телефон") 8 (495) 174 70 44
       button.header__burger(aria-label="Меню")
     nav.header__nav
       ul
         li
-          a(href="#expo") О компании
+          a(href="#expo") О шоуруме
         li
           a(href="#gallery") Фотогалерея
         li
-          a(href="#follow") Каталог
-        li
           a(href="#partner") Бренды
+        li
+          a(href="#follow") Видео
         li
           a(href="#maps") На карте
         li
@@ -25,23 +25,23 @@ header.header
     div.header__wrap
       ul
         li
-          a(href="#") О компании
+          a(href="#expo") О шоуруме
         li
-          a(href="#") Фотогалерея
+          a(href="#gallery") Фотогалерея
         li
-          a(href="#") Каталог
+          a(href="#partner") Бренды
         li
-          a(href="#") Бренды
+          a(href="#follow") Видео
         li
-          a(href="#") На карте
+          a(href="#maps") На карте
         li
-          a(href="#") Контакты
-      a.header__menu-mail(href="mailto:info@santop-expo.ru") info@santop-expo.ru
-      a.header__menu-phone(href="tel:84951747044") 8 (495) 174 70 44
-      address.header__menu-address Долгопрудный, Лихачевский проезд, 10аС1 и 10аС2,
+          a(href="#footer") Контакты
+      a.header__menu-mail(href="mailto:info@santop-expo.ru", , aria-label="E-mail") info@santop-expo.ru
+      a.header__menu-phone(href="tel:84951747044", aria-label="Телефон") 8 (495) 174 70 44
+      address.header__menu-address Долгопрудный, Лихачевский проезд, 10аС1
       div.header__menu-time 10:00 — 22:00 без выходных
       div.header__menu-social
-        a(href="#")
+        a(href="#", aria-label="Facebook")
           img(src="img/svg/facebook-dark.svg", alt="")
-        a(href="#")
+        a(href="#", , aria-label="Instagram")
           img(src="img/svg/instagram-dark.svg", alt="")

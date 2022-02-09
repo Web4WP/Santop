@@ -10,9 +10,72 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.footer').classList.toggle('open');
   })
 
+  document.querySelectorAll('.header__menu a').forEach(function (e) {
+    e.addEventListener('click', function (t) {
+      document.querySelector('main').classList.toggle('open');
+    })
+  })
+
+
+    let button = $('.up');
+    $(window).scroll (function () {
+      if ($(this).scrollTop () > 300) {
+        button.fadeIn();
+      } else {
+        button.fadeOut();
+      }
+    });
+
+    button.on('click', function(){
+      $('body, html').animate({
+        scrollTop: 0
+      }, 800);
+      return false;
+    });
+
+
+
+  /*$('#exampleModal').on('show.bs.modal', function(e) {
+    $("body").css({
+      "overflow": "hidden"
+    })
+  });
+  $('#exampleModal').on('hide.bs.modal', function(e) {
+    $("body").css({
+      "overflow": "auto"
+    })
+  });*/
+
+  /*$('#exampleModal').on('shown.bs.modal', function () {
+
+  })*/
+
+  /*document.querySelectorAll('.follow__slider-item-img').forEach(function (e) {
+    e.addEventListener('click', function (el) {
+      el.target.classList.add('hidden');
+      document.querySelectorAll('.follow__slider-item-link iframe').forEach(function (elt) {
+        elt.classList.add('visible');
+      })
+    })
+  })*/
+
+
   $('.header__logo').click(function () {
     $("html, body").animate({ scrollTop: "0px"});
   })
+
+  $('.header__menu ul li a').click(function () {
+    $('.header__burger').toggleClass('open');
+    $('.header__menu').toggleClass('open');
+  })
+
+  /*document.querySelector('.follow__slider-item-link').addEventListener('click', function (e) {
+    e.target.preventDefault();
+    document.querySelector('.follow__slider-item-link iframe').classList.add('visible');
+  })*/
+
+
+
 
 
   const partner = new Swiper('.partner__carousel', {
@@ -27,9 +90,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if($(window).width() < 1023) {
 
+
     const galleryFirst = new Swiper('.gallery__slider', {
       effect: "cube",
       grabCursor: true,
+      autoHeight: true,
       cubeEffect: {
         shadow: true,
         slideShadows: true,
@@ -52,39 +117,100 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if($(window).width() > 1023) {
 
-    /*let controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 500}});
-
-    let tl = new TimelineMax();
-
-    tl.to($('.expo__right-img'), 0, { transform: 'scale(1)'}).from($('.expo__right-img'), 1, { transform: 'scale(0)' });
+    let controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 500}});
+    let tl33 = new TimelineMax();
+    //tl33.from($('.banner__text'), 1, { autoAlpha: 0, y: '+=50', x: '0', ease:Linear.easeNone });
+    //-tl33.from($('.banner__logo'), 1, { x: -50 });
 
     new ScrollMagic.Scene({
-      triggerElement: ".expo",
+      triggerElement: ".banner__text",
+      triggerHook: 0.7,
       duration: "70%",
-      triggerHook: 0.7
+      offset: 0,
     })
-      .setTween(tl)
+      .setTween(tl33)
+
       .addTo(controller);
-
-    let tl2 = new TimelineMax();
-
-    tl2.to($('.expo__left-img'), 0, { transform: 'scale(1)'}).from($('.expo__left-img'), 1, { transform: 'scale(0)' });
-
-    new ScrollMagic.Scene({
-      triggerElement: ".expo__meter",
-      duration: "70%",
-      triggerHook: 0.6
-    })
-      .setTween(tl2)
-      .addTo(controller);*/
 
   }
 
-  let controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 500}});
+
+
+  let controller = new ScrollMagic.Controller({ globalSceneOptions: {duration: 500}} );
+
+  $('.partner__item-img').each(function() {
+
+    // build a tween
+    let tween = TweenMax.from($(this), 0.3, { transform: 'scale(0)' });
+
+    // build a scene
+    let scene = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 0.7,
+      offset: -200,
+      reverse: false
+    })
+      .setTween(tween)
+      .addTo(controller);
+
+  });
 
   let tl = new TimelineMax();
 
+  /* Gallery */
+  let gallery = new TimelineMax();
+
+
+  new ScrollMagic.Scene({
+    triggerElement: "#gallery",
+    duration: "10%",
+    triggerHook: 0.7
+  }).setTween(gallery).addTo(controller);
+
+
+// loop through all elements
+  $('.gallery__left-img').each(function() {
+
+    // build a tween
+    let tween = TweenMax.from($(this), 0.3, { autoAlpha: 0, y: '+=200', x: '0', ease:Linear.easeNone });
+
+    // build a scene
+    let scene = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 0.7,
+      offset: 0,
+      reverse: false
+    })
+      .setTween(tween)
+      .addTo(controller);
+
+  });
+
+  $('.gallery__right-img').each(function() {
+
+    let tween = TweenMax.from($(this), 0.7, { autoAlpha: 0, y: '+=200', x: '0', ease:Linear.easeNone });
+
+    let scene = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 0.7,
+      offset: 0,
+      reverse: false
+    })
+      .setTween(tween)
+      .addTo(controller);
+
+  });
+
+  /*new ScrollMagic.Scene({
+    triggerElement: "#gallery",
+    duration: "60%",
+    triggerHook: 0.5
+  })
+    .setTween(gallery)
+    .addTo(controller);*/
+
   tl.to($('.expo__right-img'), 0, { transform: 'scale(1)'}).from($('.expo__right-img'), 1, { transform: 'scale(0)' });
+
 
   new ScrollMagic.Scene({
     triggerElement: ".expo",
@@ -122,6 +248,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   tl4.to($('.expo__title'), 0, { transform: 'scale(1)'}).from($('.expo__title'), 1, { transform: 'scale(0)' });
 
+
+
+
   new ScrollMagic.Scene({
     triggerElement: "#expo",
     duration: "80%",
@@ -133,15 +262,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   const cer = new Swiper('.cer__slider', {
-    /*effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
+    /*autoplay: {
+      delay: 5000,
     },*/
     slidesPerView: "3",
     spaceBetween: 30,
@@ -157,8 +279,11 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       // when window width is >= 640px
       768: {
+        slidesPerView: 2
+      },
+      1024: {
         slidesPerView: 3
-      }
+      },
     },
     scrollbar: {
       el: '.cer__nav-scrollbar',
@@ -167,6 +292,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const follow = new Swiper('.follow__slider', {
     slidesPerView: "2",
+    /*autoplay: {
+      delay: 5000,
+    },*/
     navigation: {
       nextEl: '.follow__nav-btn_next',
       prevEl: '.follow__nav-btn_prev',
@@ -181,15 +309,23 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 0,
       },
       // when window width is >= 640px
-      768: {
+      /*768: {
         slidesPerView: 2
+      },*/
+      1024: {
+        slidesPerView: 2
+      },
+      1280: {
+        spaceBetween: 30
       }
     },
   });
 
-  const map = new Swiper('.map__slider', {
+  /*const map = new Swiper('.map__slider', {
     effect: "cube",
     grabCursor: true,
+    observer: true,
+    observeParents: true,
     cubeEffect: {
       shadow: true,
       slideShadows: true,
@@ -203,12 +339,12 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollbar: {
       el: '.map__scrollbar',
     },
-  });
+  });*/
 
   ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
         center: [55.92213106880769,37.49972250000002],
-        zoom: 17
+        zoom: 12
       }, {
         searchControlProvider: 'yandex#search'
       }),
@@ -230,13 +366,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  $(function(){
+  $(function() {
     $("a[href^='#']").click(function() {
       let _href = $(this).attr("href");
       $("html, body").animate({scrollTop: $(_href).offset().top - 100 +"px"}, 1000);
       return false;
     });
   });
+
+
+  $('#exampleModal').on('shown.bs.modal', function () {
+
+  })
+
+
+
 
 
 

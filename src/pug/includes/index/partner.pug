@@ -7,41 +7,41 @@ section#partner.partner
         div.partner__item
           img.partner__item-img(src="img/content/partner-2.png", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-3.png", alt="")
+          img.partner__item-img(src="img/svg/partner-3.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-4.png", alt="")
+          img.partner__item-img(src="img/svg/partner-4.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-5.png", alt="")
+          img.partner__item-img(src="img/svg/partner-5.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-6.png", alt="")
+          img.partner__item-img(src="img/svg/partner-6.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-7.png", alt="")
+          img.partner__item-img(src="img/svg/partner-7.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-8.png", alt="")
+          img.partner__item-img(src="img/svg/partner-8.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-9.png", alt="")
+          img.partner__item-img(src="img/svg/partner-9.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-10.png", alt="")
+          img.partner__item-img(src="img/svg/partner-10.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-11.png", alt="")
+          img.partner__item-img(src="img/svg/partner-11.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-12.png", alt="")
+          img.partner__item-img(src="img/svg/partner-12.svg", alt="")
         div.partner__item
           img.partner__item-img(src="img/content/partner-13.png", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-14.png", alt="")
+          img.partner__item-img(src="img/svg/partner-14.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-15.png", alt="")
+          img.partner__item-img(src="img/svg/partner-15.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-16.png", alt="")
+          img.partner__item-img(src="img/svg/partner-16.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-17.png", alt="")
+          img.partner__item-img(src="img/svg/partner-17.svg", alt="")
         div.partner__item
           img.partner__item-img(src="img/content/partner-18.png", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-19.png", alt="")
+          img.partner__item-img(src="img/svg/partner-19.svg", alt="")
         div.partner__item
-          img.partner__item-img(src="img/content/partner-20.png", alt="")
+          img.partner__item-img(src="img/svg/partner-20.svg", alt="")
         div.partner__item
           img.partner__item-img(src="img/content/partner-21.png", alt="")
         div.partner__item
@@ -51,21 +51,14 @@ section#partner.partner
         div.partner__item
           img.partner__item-img(src="img/content/partner-24.png", alt="")
       div.partner__right
-        div.partner__right-title Шоурум Santop Expo представляет широкий спектр сантехники от ведущих производителей
+        h2.partner__right-title Santop Expo представляет широкий спектр сантехники от ведущих производителей
         img.partner__right-img(src="img/svg/scroll-down-dark.svg", alt="")
-        img.partner__right-img.partner__right-img_show(src="img/svg/showroom.svg", alt="")
-        div.partner__carousel.swiper
-          a.partner__carousel-link(href="#") Смотреть на карте
-          div.partner__carousel-wrap.swiper-wrapper
-            div.partner__carousel-item.swiper-slide
-              div.partner__carousel-title 2500 м2
-              div.partner__carousel-text Такую площадь занимает наш шоурум в Москве.
-              img.partner__carousel-img(src="img/content/partner-slide-1.jpg", alt="")
-            div.partner__carousel-item.swiper-slide
-              div.partner__carousel-title + 1000
-              div.partner__carousel-text На складе 12.000 уникальных артикулов товара. 1000 заказов отгружается ежедневно
+        button.partner__right-btn-show(data-bs-toggle="modal" data-bs-target="#exampleModal")
+          img.partner__right-img.partner__right-img_show(src="img/svg/showroom.svg", alt="")
+        div.partner__carousel
+          div.partner__carousel-wrap
+            div.partner__carousel-item
+              div.partner__carousel-title 35.000 м<sup>2</sup>
+              div.partner__carousel-text 12.000 артикулов на складе.<br>1 000 заказов отгружается ежедневно
+              a.partner__carousel-link(href="#map") Смотреть на карте
               img.partner__carousel-img(src="img/content/partner-slide-2.jpg", alt="")
-          div.partner__carousel-nav
-            button.partner__carousel-btn.partner__carousel-btn_prev.swiper-button-prev
-            button.partner__carousel-btn.partner__carousel-btn_next.swiper-button-next
-          div.partner__carousel-scrollbar.swiper-scrollbar
